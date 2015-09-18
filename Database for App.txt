@@ -3,7 +3,23 @@
 1) User
 		user_ID -- varchar2(40) -- User's e-mail address only -- Primary Key
 		password -- varchar2(10)
+		/*
+		https://social.msdn.microsoft.com/forums/sqlserver/en-US/43792d40-070e-4a4a-8598-b7a3e88aa52b/which-datatype-should-be-used-for-username-password
+		for password we will need to take care of this
+		
+		*/
 		no_of_ratings_given -- number(3)
+		/*
+			Is the no_of_ratings_given attribute for how many faculties has the user voted for ??
+		*/
+		
+		
+		
+		/*
+			we even need to know that which faculties have been rated by a particular student ...
+			how to determine that ...
+		*/
+		
 		
 2) Faculty
 		fac_ID -- char(3)-- Primary Key -- Already defined by Nirma Uni(available on TT site)
@@ -11,6 +27,13 @@
 		fac_specialize -- varchar2(100) -- Contains Specialized Subjects
 		fac_image -- THIS ATTRIBUTE MAY BE REMOVED. 
 		dept_ID -- char(2) -- Foreign Key -- (Not in initial update)
+		
+		/*
+			fac_specialize is a one to many relation from faculty to subject/areas
+			if a faculty specializes in more than one subject, then how should they be placed in fac_specialize ? 			some another provision needs to be made for that
+		
+		*/
+		
 		
 		
 3) Department (For further UPDATE, not in releasing version)
@@ -22,8 +45,23 @@
 4) Rating (Weak set - Depended on Faculty)
 		fac_ID -- char(3)-- Primary Key -- Already defined by Nirma Uni(available on TT site)
 		fac_rating -- number(3,2)
+		/*
+			how to calculate this will be of prime importance ... !!!
+		*/
+		
 		total_times_rated -- number(3)
+		/*
+			total no of users that have rated for a particular faculty
+		*/
+		
 		total_star -- number(4)
+		/*
+			total_count of stars 
+			Eg: if Ria has given 3stars to KunalPathak 
+				and Harshil has given 5stars to KunalPathak 
+			then total_star of KunalPathak becomes 3+5=8
+		
+		*/
 		
 ---------------------------------------------------------------------------
 
