@@ -8,7 +8,7 @@
 2) Faculty
 		fac_ID -- char(3)-- Primary Key -- Already defined by Nirma Uni(available on TT site)
 		fac_name -- char(20)
-		fac_specialize -- char(60) -- Contains Specialized Subjects
+		fac_specialize -- varchar2(100) -- Contains Specialized Subjects
 		fac_image -- THIS ATTRIBUTE MAY BE REMOVED. 
 		dept_ID -- char(2) -- Foreign Key -- (Not in initial update)
 		
